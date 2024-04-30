@@ -5,4 +5,8 @@
     <string name="senha">Senha</string>
     <string name="entrar">Entrar</string>
     <string name="cadastrar">Cadastrar</string>
+
+    <string name="produto_tv">Tv 65 polegadas</string>
+    <string name="descricao_tv">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="valor_tv">R$ 5.000,00</string>
 </resources>

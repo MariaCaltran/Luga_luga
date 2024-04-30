@@ -12,20 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.paginalogin.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listCidade;
-
-    private String[] cidades = {
-           "Sâo Cralos", "Araraquara", "Ibaté", "Ribeirão Bonito",
-            "Dourado", "Descalvado", "Porto Ferreira", "Santa Rita Do Passa-Quatro",
-            "Tambaú", "Pirassununga", "Ribeirão Preto", "Jaboticabal", "Franca",
-            "São Paulo", "Itirapina", "Brotas", "Jaú", "Bauru", "Rio Claro"
-
-    };
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,23 +26,7 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        recyclerView.findViewById(R.id.listaProdutos);
 
-    listCidade = findViewById(R.id.listaNomes);
-
-    ArrayAdapter<String> adapter = new ArrayAdapter<>(
-            getApplicationContext(),
-            android.R.layout.simple_list_item_1,
-            android.R.id.text1,
-            cidades
-    );
-        listCidade.setAdapter(adapter);
-
-        listCidade.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String itemSelecionado = listCidade.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), itemSelecionado, Toast.LENGTH_LONG).show();
-            }
-        });
     }
 }
