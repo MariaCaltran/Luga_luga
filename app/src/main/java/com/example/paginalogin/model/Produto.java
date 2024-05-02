@@ -1,6 +1,6 @@
 package com.example.paginalogin.model;
 
-public class produto {
+public class Produto {
     private String nome;
 
     private String descricao;
@@ -9,7 +9,7 @@ public class produto {
 
     private String valor;
 
-    public produto(String nome, String descricao, String quantidade, String valor) {
+    public Produto(String nome, String descricao, String quantidade, String valor) {
         this.nome = nome;
         this.descricao = descricao;
         this.quantidade = quantidade;

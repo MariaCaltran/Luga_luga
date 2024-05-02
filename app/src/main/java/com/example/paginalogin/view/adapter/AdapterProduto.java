@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.paginalogin.R;
+import com.example.paginalogin.model.Produto;
+
+import java.util.List;
 
 public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.ViewHolder> {
 
@@ -37,7 +40,7 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.ViewHold
 
     @Override
     public int getItemCount() {
-        return 0;
+        return produtoList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
