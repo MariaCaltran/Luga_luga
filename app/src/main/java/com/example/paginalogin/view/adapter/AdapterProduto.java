@@ -45,7 +45,7 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.ViewHold
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView nome_TV, preco_tv, descricao_tv;
+        TextView nome_TV, preco_tv, descricao_tv, status_tv;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 

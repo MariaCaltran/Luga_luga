@@ -1,5 +1,7 @@
 package com.example.paginalogin.view;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -52,30 +54,32 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapterProduto);
 
         recyclerView.addOnItemTouchListener(
-                new Recycler.ItemClickListener(
+                new RecyclerItemClickListener(
                         getApplicationContext(),
                         recyclerView,
                         new RecyclerItemClickListener.OnItemClickListener() {
 
                             @Override
-                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                            }
-
-                            @Override
                             public void onItemClick(View view, int position) {
+                                Intent intent = new Intent(MainActivity.this, ProdutoActivity.class);
+                                intent.putExtra("produto", produtoList.get(position));
+                                startActivity(intent);
 
                             }
 
                             @Override
                             public void onLongItemClick(View view, int position) {
+                                Toast.makeText(getApplicationContext(), produtoList.get(position).getNome() , Toast.LENGTH_SHORT).show();
+                            }
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                             }
-                        });
 
-
+                        }));
     }
-    public void CriarListaProdutos(){
+
+    public void CriarListaProdutos() {
         Produto produto = new Produto(
                 "Iphone 14", "Iphone 14 128 gb BRANCO", "10", "4000.00"
         );
@@ -126,4 +130,5 @@ public class MainActivity extends AppCompatActivity {
         );
         produtoList.add(produto);
     }
+
 }
