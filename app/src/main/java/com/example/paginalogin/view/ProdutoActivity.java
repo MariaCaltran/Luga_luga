@@ -39,6 +39,11 @@ public class ProdutoActivity extends AppCompatActivity {
         btnAlugar = findViewById(R.id.btnAlugar);
         produto = getIntent().getExtras().getParcelable("produto");
 
+        if (produto.getQuantidade().equals("0")){
+            btnAlugar.setEnabled(true);
+            btnAlugar.setText("Indisponivel");
+        }
+
         nomeProduto.setText(produto.getNome());
         qtdProduto.setText(produto.getQuantidade());
         precoProduto.setText(produto.getValor());

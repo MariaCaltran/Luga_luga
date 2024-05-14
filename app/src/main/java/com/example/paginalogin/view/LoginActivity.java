@@ -9,11 +9,13 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.paginalogin.R;
-import com.example.paginalogin.view.MainActivity;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnEntrar;
+
+    private TextInputLayout inputEmail, inputSenha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
+        inputEmail = findViewById(R.id.outlinedTextField);
+        inputSenha = findViewById(R.id.text_senha);
         btnEntrar = findViewById(R.id.btn_entrar);
 
         Intent intent = new Intent(this, MainActivity.class);
@@ -28,9 +32,26 @@ public class LoginActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                validaEmailSenha();
                 startActivity(intent);
             }
+
         });
 
+    }
+
+    public boolean validaEmailSenha(){
+        if (inputEmail.getEditText() != null
+                && inputEmail.getEditText().getText().toString().equals(" ")){
+            inputEmail.setError("Informe o Email");
+            return false;
+        }
+        if (inputSenha.getEditText() != null
+                && inputSenha.getEditText().getText().toString().equals(" ")) {
+            inputSenha.setError("Informe a Senha");
+            return true;
+
+        }
+        return true;
     }
 }
