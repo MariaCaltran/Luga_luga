@@ -65,7 +65,7 @@
             android:textSize="20dp"
             android:textStyle="bold"
             app:layout_constraintTop_toBottomOf="@+id/img_alt"
-            />
+            tools:ignore="MissingConstraints" />
 
         <Button
             android:id="@+id/btnAlugar"

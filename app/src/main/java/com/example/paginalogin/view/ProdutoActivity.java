@@ -29,6 +29,7 @@ public class ProdutoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_produto);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        myToolbar.setTitle("LugaLuga");
         setSupportActionBar(myToolbar);
 
         nomeProduto = findViewById(R.id.prod_alt);

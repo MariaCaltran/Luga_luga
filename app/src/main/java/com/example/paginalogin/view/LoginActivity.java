@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.paginalogin.R;
@@ -14,18 +13,18 @@ import com.google.android.material.textfield.TextInputLayout;
 public class LoginActivity extends AppCompatActivity {
 
     private Button btnEntrar;
-
     private TextInputLayout inputEmail, inputSenha;
+    private Button btnCadastrar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
         inputEmail = findViewById(R.id.outlinedTextField);
         inputSenha = findViewById(R.id.text_senha);
         btnEntrar = findViewById(R.id.btn_entrar);
+        btnCadastrar = findViewById(R.id.btn_cadastrar_Login);
 
         Intent intent = new Intent(this, MainActivity.class);
 
@@ -37,6 +36,17 @@ public class LoginActivity extends AppCompatActivity {
             }
 
         });
+
+
+        Intent intent2 = new Intent(this, CadastroActivity.class);
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(intent2);
+            }
+
+        });
+
 
     }
 
@@ -54,4 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
 }
