@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         btnEntrar = findViewById(R.id.btn_entrar);
         btnCadastrar = findViewById(R.id.btn_cadastrar_Login);
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MainActivity2.class);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
