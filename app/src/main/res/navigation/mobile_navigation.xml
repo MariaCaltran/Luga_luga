@@ -11,11 +11,40 @@
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
-
-
     <fragment
         android:id="@+id/nav_produtos"
         android:name="com.example.paginalogin.view.ProdutoFragment"
         android:label="@string/menu_produtos"
         tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_solicitacao"
+        android:name="com.example.paginalogin.view.SolicitacaoFragment"
+        android:label="@string/menu_solicitacao"
+        tools:layout="@layout/fragment_solicitacao" />
+
+    <fragment
+        android:id="@+id/nav_acompanhamento"
+        android:name="com.example.paginalogin.view.AcompanhamentoFragment"
+        android:label="@string/menu_acompanhamento"
+        tools:layout="@layout/fragment_acompanhamento" />
+
+    <fragment
+        android:id="@+id/nav_atendimento"
+        android:name="com.example.paginalogin.view.AtendimentoFragment"
+        android:label="@string/menu_atendimento"
+        tools:layout="@layout/fragment_atendimento" />
+
+    <fragment
+        android:id="@+id/nav_sobre_nos"
+        android:name="com.example.paginalogin.view.SobreFragment"
+        android:label="@string/menu_sobre_nos"
+        tools:layout="@layout/fragment_sobre" />
+
+    <fragment
+        android:id="@+id/nav_fale_conosco"
+        android:name="com.example.paginalogin.view.FaleConoscoFragment"
+        android:label="@string/menu_fale_conosco"
+        tools:layout="@layout/fragment_fale_conosco" />
+
 </navigation>

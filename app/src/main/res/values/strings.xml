@@ -66,6 +66,19 @@
 
     <string name="menu_home">Home</string>
     <string name="menu_produtos">Produtos</string>
+    <string name="menu_solicitacao">Solicitações</string>
+    <string name="menu_acompanhamento">Acompanhamento</string>
+    <string name="menu_atendimento">Atendimento</string>
+    <string name="menu_sobre_nos">Sobre Nós</string>
+    <string name="menu_fale_conosco">Fale Conosco</string>
+
+    <string name="nosso_email">Duvidas ou Encontrou algum problema? Entre em contato conosco por meio do nosso E-mail:</string>
+    <string name="telDuvidas">Prefere Ligar? Aqui está o número:</string>
+    <string name="telefone">000 00 000000000</string>
+
+    <string name="deixar_dados">Deixe seus dados aqui para que possamos entrar em contato</string>
+    <string name="telefoneCliente">Telefone</string>
+    <string name="ajuda">Esperamos ter ajudado!</string>
 
     <string name="lugalga">Luga Luga</string>
     <string name="bemvindo">Bem-Vindo ao LugaLuga</string>
