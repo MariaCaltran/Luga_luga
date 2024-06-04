@@ -3,8 +3,6 @@ package com.example.paginalogin.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
-
 import java.util.Date;
 
 
@@ -15,6 +13,8 @@ public class Usuario implements Parcelable{
     private String cpf;
 
     private Date dataNasc;
+
+    private String telefone;
 
     private String cep;
 
@@ -38,6 +38,7 @@ public class Usuario implements Parcelable{
         this.nome = nome;
         this.cpf = cpf;
         this.dataNasc = dataNasc;
+        this.telefone = telefone;
         this.cep = cep;
         this.cidade = cidade;
         this.logradouro = logradouro;
@@ -50,6 +51,7 @@ public class Usuario implements Parcelable{
     }
 
     protected Usuario(Parcel in) {
+        telefone = in.readString();
         nome = in.readString();
         cpf = in.readString();
         cep = in.readString();
@@ -65,6 +67,7 @@ public class Usuario implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(telefone);
         dest.writeString(nome);
         dest.writeString(cpf);
         dest.writeString(cep);
@@ -95,6 +98,14 @@ public class Usuario implements Parcelable{
         }
     };
 
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
     public String getNome() {
         return nome;
     }
@@ -111,11 +122,11 @@ public class Usuario implements Parcelable{
         this.cpf = cpf;
     }
 
-    public Date getDataNasc() {
+    public String getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(Date dataNasc) {
+    public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
 
@@ -143,7 +154,7 @@ public class Usuario implements Parcelable{
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
@@ -159,7 +170,7 @@ public class Usuario implements Parcelable{
         this.complemento = complemento;
     }
 
-    public String getBairro() {
+    public int getBairro() {
         return bairro;
     }
 

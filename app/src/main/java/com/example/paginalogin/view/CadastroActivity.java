@@ -8,21 +8,25 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.example.paginalogin.R;
+import com.example.paginalogin.controler.UsuarioController;
+import com.example.paginalogin.model.Usuario;
 import com.google.android.material.textfield.TextInputLayout;
 
 public class CadastroActivity extends AppCompatActivity {
 
+    private Button btnCadastrar;
     private Spinner spinner;
-    private TextInputLayout inputCpf;
-    private TextInputLayout inputcep;
+    private TextInputLayout inputCpf, inputNome, inputdata, inputcep,
+    inputCidade, inputLogradouro, inputNumero, inputComplememto, inputTelefone,
+    inputBairro, inputEmail, inputSenha;
 
-    private TextInputLayout inputdata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +37,19 @@ public class CadastroActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         inputCpf = findViewById(R.id.input_cpf);
-        inputcep = findViewById(R.id.input_cep);
+        inputNome = findViewById(R.id.input_nome);
         inputdata = findViewById(R.id.input_nascimento);
+        inputcep = findViewById(R.id.input_cep);
+        inputCidade = findViewById(R.id.input_cidade);
+        inputLogradouro = findViewById(R.id.input_logradouro);
+        inputNumero = findViewById(R.id.input_numero);
+        inputComplememto = findViewById(R.id.input_complemento);
+        inputTelefone = findViewById(R.id.input_numero);
+        inputBairro = findViewById(R.id.input_bairro);
+        inputEmail = findViewById(R.id.outlinedTextField);
+        inputSenha = findViewById(R.id.text_senha);
+
+
         inputCpf.getEditText().addTextChangedListener(new TextWatcher() {
 
 
@@ -190,5 +205,37 @@ public class CadastroActivity extends AppCompatActivity {
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                UsuarioController crud = new UsuarioController(getApplicationContext());
+
+                Usuario usuario = new Usuario();
+                usuario.setNome(inputNome.getEditText().getText().toString());
+                usuario.setCpf(inputCpf.getEditText().getText().toString());
+                usuario.setDataNasc(inputdata.getEditText().getText().toString());
+                usuario.setCep(inputcep.getEditText().getText().toString());
+                usuario.setCidade(inputCidade.getEditText().getText().toString());
+                usuario.setLogradouro(inputLogradouro.getEditText().getText().toString());
+                usuario.setNumero(Integer.parseInt(inputNumero.getEditText().getText().toString()));
+                usuario.setComplemento(inputComplememto.getEditText().getText().toString());
+                usuario.setTelefone(inputTelefone.getEditText().getText().toString());
+                usuario.setBairro(inputBairro.getEditText().getText().toString());
+                usuario.setEmail(inputEmail.getEditText().getText().toString());
+                usuario.setSenha(inputSenha.getEditText().getText().toString());
+
+                String resultado;
+
+
+                resultado = crud.insereDados(usuario.getNome(), usuario.getCpf(), usuario.getDataNasc(), usuario.getCep(),
+                        usuario.getCidade(), usuario.getLogradouro(), usuario.getNumero(), usuario.getComplemento(),
+                        usuario.getTelefone(),usuario.getBairro(),usuario.getEmail(),usuario.getSenha());
+
+                Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
+            }
+        });
+
+
     }
 }
